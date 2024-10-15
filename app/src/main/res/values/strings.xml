@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ecoShelf</string>
+    <string name="app_name">EcoShelf</string>
+    <string name="home">Home</string>
 </resources>
