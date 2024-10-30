@@ -4,35 +4,44 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         val btnHome = findViewById<Button>(R.id.btn_home)
-        val btnSearch = findViewById<Button>(R.id.btn_input)
-        val btnAdd = findViewById<Button>(R.id.btn_stats)
-        val btnNotifications = findViewById<Button>(R.id.btn_lifecycle)
-        val btnProfile = findViewById<Button>(R.id.btn_options)
+        val btnInput = findViewById<Button>(R.id.btn_input)
+        val btnStats = findViewById<Button>(R.id.btn_stats)
+        val btnLifecycle = findViewById<Button>(R.id.btn_lifecycle)
+        val btnOptions = findViewById<Button>(R.id.btn_options)
+
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment())
+        }
 
         btnHome.setOnClickListener {
-            // Handle Home button click
+            loadFragment(HomeFragment())
         }
-        btnSearch.setOnClickListener {
-            // Handle Search button click
+        btnInput.setOnClickListener {
+            loadFragment(InputFragment())
         }
-        btnAdd.setOnClickListener {
-            // Handle Add button click
-        }
-        btnNotifications.setOnClickListener {
-            // Handle Notifications button click
-        }
-        btnProfile.setOnClickListener {
-            // Handle Profile button click
-        }
+        btnStats.setOnClickListener {
+            loadFragment(StatsFragment())
 
+        }
+        btnLifecycle.setOnClickListener {
+            loadFragment(LifecycleFragment())
+
+        }
+        btnOptions.setOnClickListener {
+            loadFragment(OptionsFragment())
+
+        }
+    }
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.content_frame, fragment)
+        transaction.commit()
     }
 }
