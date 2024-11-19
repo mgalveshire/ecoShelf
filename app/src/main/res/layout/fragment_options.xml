@@ -5,10 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".OptionsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Options" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+        android:layout_gravity="top|center_horizontal"
+        android:padding="16dp"
+        android:textSize="24sp" />
 
+    <!-- City Input Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your City:"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp" />
+
+    <!-- City Input Field -->
+    <EditText
+        android:id="@+id/cityInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City Name"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"
+        android:padding="8dp" />
+
+<!--    Map View for Displaying City -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp" />
 </FrameLayout>

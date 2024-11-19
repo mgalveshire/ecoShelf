@@ -1,14 +1,58 @@
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home" />
+        android:id="@+id/ecoShelfDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EcoShelf is an inventory management solution for clothing businesses focused on sustainability. Track excess materials, connect with recycling options, and minimize waste."
+        android:textSize="16sp"
+        android:textColor="#444444"
+        android:paddingBottom="16dp"
+        android:lineSpacingExtra="4dp" />
+    <TextView
+        android:id="@+id/inventorySummaryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inventory Summary"
+        android:textSize="18sp"
+        android:textColor="@color/primary"
+        android:fontFamily="sans-serif-medium"
+        android:paddingBottom="8dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/inventoryStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Items: 120\nExcess Items: 30"
+        android:textSize="16sp"
+        android:textColor="@color/lightPrimary"
+        android:paddingBottom="16dp" />
+
+    <!-- Recent Updates Section -->
+    <TextView
+        android:id="@+id/recentUpdatesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent Updates"
+        android:textSize="18sp"
+        android:textColor="@color/primary"
+        android:fontFamily="sans-serif-medium"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/recentUpdates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New donation partner added: Green Earth Foundation.\nWeekly recycling stats updated."
+        android:textSize="16sp"
+        android:textColor="@color/lightPrimary"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>
