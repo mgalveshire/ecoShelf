@@ -1,64 +1,118 @@
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeFragment"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:layout_gravity="top|center_horizontal"
-        android:padding="16dp"
-        android:textSize="24sp" />
-    <TextView
-        android:id="@+id/ecoShelfDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EcoShelf is an inventory management solution for clothing businesses focused on sustainability. Track excess materials, connect with recycling options, and minimize waste."
-        android:textSize="16sp"
-        android:textColor="#444444"
-        android:paddingBottom="16dp"
-        android:lineSpacingExtra="4dp" />
-    <TextView
-        android:id="@+id/inventorySummaryTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Inventory Summary"
-        android:textSize="18sp"
-        android:textColor="@color/primary"
-        android:fontFamily="sans-serif-medium"
-        android:paddingBottom="8dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/home_ecoshelf"
+            android:scaleType="fitCenter" />
 
-    <TextView
-        android:id="@+id/inventoryStats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total Items: 120\nExcess Items: 30"
-        android:textSize="16sp"
-        android:textColor="@color/lightPrimary"
-        android:paddingBottom="16dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="5dp"
+            android:textColor="@color/primary"/>
 
-    <!-- Recent Updates Section -->
-    <TextView
-        android:id="@+id/recentUpdatesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recent Updates"
-        android:textSize="18sp"
-        android:textColor="@color/primary"
-        android:fontFamily="sans-serif-medium"
-        android:paddingBottom="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/lightPrimary"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="16sp"
+            android:text="EcoShelf provides its clients with an all-in-one mobile app solution to better analyze their stock and overdraft trends, connect with nonprofit organizations to recycle/reuse excess clothing, and track their potential waste for salvageable items and materials to be reused in the future by its producer. " />
 
-    <TextView
-        android:id="@+id/recentUpdates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New donation partner added: Green Earth Foundation.\nWeekly recycling stats updated."
-        android:textSize="16sp"
-        android:textColor="@color/lightPrimary"
-        android:paddingBottom="16dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fun Facts"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/primary"/>
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/stats10percent"
+            android:contentDescription="Statistic about ocean polution." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/lightPrimary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:text="- Around 92 million tons of textile waste is generated   each year. \n- The industry uses 79 billion cubic meters of water   annually, contributing to water scarcity. \n- Only 15% of textiles are recycled, leading to massive   landfills. \n- Fashion accounts for nearly 20% of global   wastewater. \n- On average it takes 2,700 liters of water to make a   single cotton t-shirt." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inventory Summary"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:textColor="@color/primary"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/total_items_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/lightPrimary"
+            android:textSize="16sp"
+            android:text="Total Items:"
+            android:fontFamily="sans-serif-medium"
+            android:paddingBottom="5dp" />
+
+
+        <TextView
+            android:id="@+id/excess_items_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:textColor="@color/lightPrimary"
+            android:fontFamily="sans-serif-medium"
+            android:text="Excess Items:" />
+        <!-- Recent Updates Section -->
+        <TextView
+            android:id="@+id/recentUpdatesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Updates"
+            android:textSize="20sp"
+            android:textColor="@color/primary"
+            android:fontFamily="sans-serif-medium"
+            android:padding="5dp" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/recentUpdates"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text=""-->
+<!--            android:padding="10dp"-->
+<!--            android:textColor="@color/lightPrimary"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:textSize="16sp"-->
+<!--            android:paddingBottom="16dp" />-->
+    </LinearLayout>
+</ScrollView>

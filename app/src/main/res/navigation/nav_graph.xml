@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph">
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="edu.arizona.cast.mollyalveshire.ecoshelf.HomeFragment"
+        android:label="GlucoseListFragment" >
+        <action
+            android:id="@+id/action_home_fragment_to_lifecycle_fragment"
+            app:destination="@id/lifecycle_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/input_fragment"
+        android:name="edu.arizona.cast.mollyalveshire.ecoshelf.InputFragment"
+        android:label="GlucoseListFragment" />
+    <fragment
+        android:id="@+id/lifecycle_fragment"
+        android:name="edu.arizona.cast.mollyalveshire.ecoshelf.StatsFragment"
+        android:label="GlucoseListFragment" />
+    <fragment
+        android:id="@+id/options_fragment"
+        android:name="edu.arizona.cast.mollyalveshire.ecoshelf.OptionsFragment"
+        android:label="GlucoseListFragment" />
+    <fragment
+        android:id="@+id/stats_fragment"
+        android:name="edu.arizona.cast.mollyalveshire.ecoshelf.ManagementFragment"
+        android:label="GlucoseListFragment" />
+
+</navigation>

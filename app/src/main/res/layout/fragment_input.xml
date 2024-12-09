@@ -1,123 +1,154 @@
 <!-- res/layout/activity_input_product.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="5dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Product Information"
-        android:layout_gravity="top|center_horizontal"
-        android:padding="16dp"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/et_name"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Name" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/info_ecoshelf"
+            android:scaleType="fitCenter"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp">
 
-    <EditText
-        android:id="@+id/et_fabric"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Fabric" />
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Name"
+                    android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/et_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Style" />
+                <EditText
+                    android:id="@+id/et_fabric"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Fabric"
+/>
 
-    <EditText
-        android:id="@+id/et_pattern"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Pattern" />
+                <EditText
+                    android:id="@+id/et_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Style"
+ />
 
-    <EditText
-        android:id="@+id/et_material"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Material" />
+                <EditText
+                    android:id="@+id/et_pattern"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Pattern" />
 
-    <EditText
-        android:id="@+id/et_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize= "15sp"
-        android:hint="Color" />
+                <EditText
+                    android:id="@+id/et_material"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Material" />
 
-    <EditText
-        android:id="@+id/spinner_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Gender" />
+                <EditText
+                    android:id="@+id/et_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Color"/>
 
-    <EditText
-        android:id="@+id/et_composition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Composition" />
+                <EditText
+                    android:id="@+id/spinner_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Gender" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp">
+                <EditText
+                    android:id="@+id/et_composition"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Composition"/>
 
-    <EditText
-        android:id="@+id/et_type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Type" />
+                <EditText
+                    android:id="@+id/et_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Type" />
 
-    <EditText
-        android:id="@+id/spinner_season"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Season" />
+                <EditText
+                    android:id="@+id/spinner_season"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Season" />
 
-    <EditText
-        android:id="@+id/et_product_cost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Product Cost" />
+                <EditText
+                    android:id="@+id/et_product_cost"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
 
-    <EditText
-        android:id="@+id/et_product_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Product Price" />
+                    android:hint="Product Cost" />
 
-    <EditText
-        android:id="@+id/et_units_sold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Units Sold to Date" />
+                <EditText
+                    android:id="@+id/et_product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Product Price" />
 
-    <EditText
-        android:id="@+id/et_units_total"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:hint="Units Total" />
+                <EditText
+                    android:id="@+id/et_units_sold"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Units Sold to Date" />
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:textSize="15sp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@color/lightPrimary"/>
+                <EditText
+                    android:id="@+id/et_units_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="20sp"
+                    android:hint="Units Total" />
+            </LinearLayout>
+        </LinearLayout>
 
-</LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:layout_height="70dp"
+            android:text="Submit"
+            android:textSize="22sp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/lightPrimary"/>
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_gravity="center_horizontal"
+            android:textSize="15sp"
+            android:textColor="@color/red"/>
+
+    </LinearLayout>
+</ScrollView>

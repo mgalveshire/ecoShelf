@@ -4,12 +4,175 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StatsFragment">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Statistics"
-        android:layout_gravity="top|center_horizontal"
-        android:padding="16dp"
-        android:textSize="24sp" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/stats_ecoshelf"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/inventory_turnover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/lightPrimary"
+                android:fontFamily="sans-serif-medium"
+                android:text="Inventory Turnover Ratio:" />
+
+
+            <TextView
+                android:id="@+id/waste_potential"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/lightPrimary"
+                android:fontFamily="sans-serif-medium"
+                android:text="Waste Potential:" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/unsold_inventory_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/lightPrimary"
+                android:fontFamily="sans-serif-medium"
+                android:text="Cost of Unsold Inventory:" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/unsoldPieChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/sales_overstock_comparison"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/lightPrimary"
+                android:fontFamily="sans-serif-medium"
+                android:text="Sales vs Overstock Comparison: " />
+
+            <!-- X Axis Title -->
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/xAxisTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sales $         "
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/scatter_layout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.github.mikephil.charting.charts.ScatterChart
+                    android:id="@+id/scatterChart"
+                    android:layout_width="340dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+                <!-- Y Axis Title (Vertical) -->
+                <TextView
+                    android:id="@+id/yAxisTitle"
+                    android:rotation="-270"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom"
+                    android:text="    Overstock $"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/profitability_overstock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/lightPrimary"
+                android:fontFamily="sans-serif-medium"
+                android:text="Profitability of Overstocked Items:" />
+
+            <TextView
+                android:id="@+id/average_product_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/lightPrimary"
+                android:fontFamily="sans-serif-medium"
+                android:text="Average Product Cost:" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/price_elasticity"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="@color/lightPrimary"-->
+<!--                android:fontFamily="sans-serif-medium"-->
+<!--                android:text="Price Elasticity: -" />-->
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".StatsFragment">-->
+<!--    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:src="@drawable/stats_ecoshelf"-->
+<!--            android:scaleType="fitCenter"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/waste_potential"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@color/lightPrimary"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:text="Excess Items: 0" />-->
+<!--        <com.github.mikephil.charting.charts.PieChart-->
+<!--            android:id="@+id/pieChart"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="50dp" />-->
+<!--    </LinearLayout>-->
+<!--</FrameLayout>-->

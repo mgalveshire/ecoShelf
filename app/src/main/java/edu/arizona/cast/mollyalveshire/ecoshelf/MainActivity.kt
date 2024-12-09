@@ -2,14 +2,18 @@ package edu.arizona.cast.mollyalveshire.ecoshelf
 
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import edu.arizona.cast.mollyalveshire.ecoshelf.R
+import com.google.android.libraries.places.api.Places
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (!Places.isInitialized()) {
+            Places.initialize(applicationContext, "YOUR_API_KEY")
+        }
+        val context = applicationContext
+        context.deleteDatabase("clothing_inventory") // The name of your database
         setContentView(R.layout.activity_main)
         val btnHome = findViewById<Button>(R.id.btn_home)
         val btnInput = findViewById<Button>(R.id.btn_input)
@@ -28,11 +32,11 @@ class MainActivity : AppCompatActivity() {
             loadFragment(InputFragment())
         }
         btnStats.setOnClickListener {
-            loadFragment(StatsFragment())
+            loadFragment(ManagementFragment())
 
         }
         btnLifecycle.setOnClickListener {
-            loadFragment(LifecycleFragment())
+            loadFragment(StatsFragment())
 
         }
         btnOptions.setOnClickListener {
@@ -45,4 +49,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.content_frame, fragment)
         transaction.commit()
     }
+
 }

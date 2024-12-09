@@ -1,41 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OptionsFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Options"
-        android:layout_gravity="top|center_horizontal"
-        android:padding="16dp"
-        android:textSize="24sp" />
-
-    <!-- City Input Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter Your City:"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp" />
-
-    <!-- City Input Field -->
-    <EditText
-        android:id="@+id/cityInput"
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="City Name"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="120dp"
-        android:padding="8dp" />
+        android:layout_height="match_parent"
+        tools:context=".OptionsFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-<!--    Map View for Displaying City -->
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp" />
-</FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/options_ecoshelf"
+                android:scaleType="fitCenter"/>
+            <!-- City Input Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Your Zipcode:"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp" />
+
+            <!-- City Input Field -->
+            <EditText
+                android:id="@+id/city_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="85709"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:singleLine="true"/>
+
+            <!-- Radius Input Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find Stores Within (miles):"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp" />
+
+            <!-- RaduisInput Field -->
+            <EditText
+                android:id="@+id/radius_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="5"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:singleLine="true"/>
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/red"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_locations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/lightPrimary"
+                android:text="Find Matches" />
+
+            <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:id="@+id/map_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                map:mapId="80c690728f96927f" />
+            <!-- RecyclerView to show the stores -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/storeRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+    </FrameLayout>
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent">-->
+<!--<FrameLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".OptionsFragment">-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:src="@drawable/options_ecoshelf"-->
+<!--            android:scaleType="fitCenter"/>-->
+<!--        &lt;!&ndash; City Input Label &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Enter Your Zipcode:"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="110dp"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        &lt;!&ndash; City Input Field &ndash;&gt;-->
+<!--        <EditText-->
+<!--            android:id="@+id/city_input"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="85709"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="140dp"-->
+<!--            android:padding="8dp"-->
+<!--            android:singleLine="true"/>-->
+
+<!--        &lt;!&ndash; Radius Input Label &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Find Stores Within (miles):"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="180dp"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        &lt;!&ndash; RaduisInput Field &ndash;&gt;-->
+<!--        <EditText-->
+<!--            android:id="@+id/radius_input"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="5"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="210dp"-->
+<!--            android:padding="8dp"-->
+<!--            android:singleLine="true"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/message"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text=""-->
+<!--            android:textColor="@color/red"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="250dp"-->
+<!--            android:textSize="15sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_locations"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="260dp"-->
+<!--            android:backgroundTint="@color/lightPrimary"-->
+<!--            android:text="Find Matches" />-->
+
+<!--        <fragment xmlns:map="http://schemas.android.com/apk/res-auto"-->
+<!--            class="com.google.android.gms.maps.SupportMapFragment"-->
+<!--            android:id="@+id/map_fragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="400dp"-->
+<!--            map:mapId="80c690728f96927f" />-->
+<!--        &lt;!&ndash; RecyclerView to show the stores &ndash;&gt;-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/storeRecyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="400dp"-->
+<!--            android:layout_gravity="bottom" />-->
+<!--    </LinearLayout>-->
+<!--</FrameLayout>-->
+<!--</ScrollView>-->

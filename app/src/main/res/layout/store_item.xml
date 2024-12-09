@@ -1,0 +1,37 @@
+<!-- res/layout/store_item.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <!-- Store Icon -->
+    <ImageView
+        android:id="@+id/storeIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/grid_guides_24px"/>
+
+    <!-- Store Name and Address -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/storeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store Name"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/storeAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store Address"/>
+    </LinearLayout>
+</LinearLayout>

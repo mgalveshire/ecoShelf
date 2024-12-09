@@ -3,5 +3,9 @@
     <string name="home">Home</string>
     <string name="productInfo">Product Information</string>
     <string name="stats">Statistics</string>
-
+    <string name="title_activity_maps">MapsActivity</string>
+    <array name="total_items">0</array>
+    <string name="google_maps_key">AIzaSyDWsZJml04RiIh3QFZCtTo4-gRGuTCEn20</string>
+    AIzaSyDWsZJml04RiIh3QFZCtTo4-gRGuTCEn20
+    AIzaSyDWsZJml04RiIh3QFZCtTo4-gRGuTCEn20
 </resources>

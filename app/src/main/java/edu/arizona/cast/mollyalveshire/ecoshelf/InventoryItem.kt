@@ -1,14 +1,14 @@
-package edu.arizona.cast.mollyalveshire.ecoshelf.database
+package edu.arizona.cast.mollyalveshire.ecoshelf
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "inventory_items")
+@Entity(tableName = "inventory_item")
 data class InventoryItem(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val name: String,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    var name: String,
     val fabric: String,
-    val style: String,
+    var style: String,
     val pattern: String,
     val material: String,
     val color: String,
@@ -19,5 +19,5 @@ data class InventoryItem(
     val productCost: Double,
     val productPrice: Double,
     val unitsSold: Int,
-    val unitsTotal: Int
+    var unitsTotal: Int
 )
